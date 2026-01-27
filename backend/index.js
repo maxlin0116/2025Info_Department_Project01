@@ -22,7 +22,7 @@ app.get("/", (_, res) => {
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
-    app.listen(port, () => {
+    app.listen(port, "0.0.0.0", () => {
       console.log(`Server listening at http://localhost:${port}`);
     });
   })
