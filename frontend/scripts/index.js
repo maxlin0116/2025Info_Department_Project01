@@ -5,6 +5,8 @@ const leftCounter = document.getElementById("left-counter");
 const filterButtons = document.querySelectorAll(".filter");
 const clearCompletedBtn = document.getElementById("clear-completed");
 
+const API_BASE = "http://localhost:8000/api";
+
 let todos = [];
 let filter = "all";
 
@@ -30,12 +32,12 @@ function render() {
     const toggleBtn = document.createElement("button");
     toggleBtn.className = "toggle-btn";
     toggleBtn.title = todo.done ? "Undo" : "Done";
-    toggleBtn.onclick = () => toggleTodo(todo.id);
+    toggleBtn.onclick = () => toggleTodo(todo._id);
 
     const delBtn = document.createElement("button");
     delBtn.className = "delete-btn";
     delBtn.textContent = "×";
-    delBtn.onclick = () => deleteTodo(todo.id);
+    delBtn.onclick = () => deleteTodo(todo._id);
 
     li.prepend(toggleBtn);
     actions.append(delBtn);
@@ -47,25 +49,47 @@ function render() {
   leftCounter.textContent = `${left} left`;
 }
 
-function addTodo() {
+async function loadTodos() {
+  const res = await fetch(`${API_BASE}/todos`);
+  todos = await res.json();
+  render();
+}
+
+async function addTodo() {
   const value = input.value.trim();
   if (!value) return;
-  todos.push({ id: Date.now(), text: value, done: false });
+  const res = await fetch(`${API_BASE}/todos`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: value })
+  });
+  const created = await res.json();
+  todos.unshift(created);
   input.value = "";
   render();
 }
 
-function toggleTodo(id) {
-  todos = todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t));
+async function toggleTodo(id) {
+  const target = todos.find((t) => t._id === id);
+  if (!target) return;
+  const res = await fetch(`${API_BASE}/todos/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ done: !target.done })
+  });
+  const updated = await res.json();
+  todos = todos.map((t) => (t._id === id ? updated : t));
   render();
 }
 
-function deleteTodo(id) {
-  todos = todos.filter((t) => t.id !== id);
+async function deleteTodo(id) {
+  await fetch(`${API_BASE}/todos/${id}`, { method: "DELETE" });
+  todos = todos.filter((t) => t._id !== id);
   render();
 }
 
-function clearCompleted() {
+async function clearCompleted() {
+  await fetch(`${API_BASE}/todos`, { method: "DELETE" });
   todos = todos.filter((t) => !t.done);
   render();
 }
@@ -86,4 +110,4 @@ filterButtons.forEach((btn) => {
 
 clearCompletedBtn.addEventListener("click", clearCompleted);
 
-render();
+loadTodos();

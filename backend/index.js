@@ -20,10 +20,7 @@ app.get("/", (_, res) => {
 });
 
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(port, () => {
       console.log(`Server listening at http://localhost:${port}`);
