@@ -1,1 +1,0 @@
-Place public assets here.

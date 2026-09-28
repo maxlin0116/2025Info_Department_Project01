@@ -1,0 +1,223 @@
+diff --git a/frontend/package.json b/frontend/package.json
+index 87c0721..4bfac02 100644
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -1,17 +1,17 @@
+-{
+-  "name": "mks-reservation-frontend",
+-  "version": "1.0.0",
+-  "private": true,
+-  "scripts": {
+-    "dev": "vite",
+-    "build": "vite build",
+-    "preview": "vite preview"
+-  },
+-  "dependencies": {
+-    "@vitejs/plugin-react": "^4.2.1",
+-    "vite": "^5.1.4",
+-    "react": "^18.2.0",
+-    "react-dom": "^18.2.0"
+-  },
+-  "devDependencies": {}
+-}
++{
++  "name": "mks-reservation-frontend",
++  "version": "1.0.0",
++  "private": true,
++  "scripts": {
++    "dev": "vite",
++    "build": "vite build",
++    "preview": "vite preview"
++  },
++  "dependencies": {
++    "@vitejs/plugin-react": "^4.2.1",
++    "vite": "^5.1.4",
++    "react": "^18.2.0",
++    "react-dom": "^18.2.0"
++  },
++  "devDependencies": {}
++}
+diff --git a/frontend/src/App.jsx b/frontend/src/App.jsx
+index 8830caf..49d91e9 100644
+--- a/frontend/src/App.jsx
++++ b/frontend/src/App.jsx
+@@ -1,7 +1,7 @@
+-import DashboardPage from "./pages/DashboardPage";
+-
+-function App() {
+-  return <DashboardPage />;
+-}
+-
+-export default App;
++import DashboardPage from "./pages/DashboardPage";
++
++function App() {
++  return <DashboardPage />;
++}
++
++export default App;
+diff --git a/frontend/src/components/AreaStatusCard.jsx b/frontend/src/components/AreaStatusCard.jsx
+index fc12fc7..46a95e2 100644
+--- a/frontend/src/components/AreaStatusCard.jsx
++++ b/frontend/src/components/AreaStatusCard.jsx
+@@ -1,5 +1,5 @@
+-function AreaStatusCard() {
+-  return <section>Area Status</section>;
+-}
+-
+-export default AreaStatusCard;
++function AreaStatusCard() {
++  return <section>Area Status</section>;
++}
++
++export default AreaStatusCard;
+diff --git a/frontend/src/components/Calendar.jsx b/frontend/src/components/Calendar.jsx
+index 6dcee72..e003fb0 100644
+--- a/frontend/src/components/Calendar.jsx
++++ b/frontend/src/components/Calendar.jsx
+@@ -1,5 +1,5 @@
+-function Calendar() {
+-  return <section>Calendar</section>;
+-}
+-
+-export default Calendar;
++function Calendar() {
++  return <section>Calendar</section>;
++}
++
++export default Calendar;
+diff --git a/frontend/src/components/Navbar.jsx b/frontend/src/components/Navbar.jsx
+index 05c958d..7248aca 100644
+--- a/frontend/src/components/Navbar.jsx
++++ b/frontend/src/components/Navbar.jsx
+@@ -1,5 +1,5 @@
+-function Navbar() {
+-  return <nav>MKS Reservation System</nav>;
+-}
+-
+-export default Navbar;
++function Navbar() {
++  return <nav>MKS Reservation System</nav>;
++}
++
++export default Navbar;
+diff --git a/frontend/src/components/ReservationForm.jsx b/frontend/src/components/ReservationForm.jsx
+index 0a5c1ee..4ecc706 100644
+--- a/frontend/src/components/ReservationForm.jsx
++++ b/frontend/src/components/ReservationForm.jsx
+@@ -1,5 +1,5 @@
+-function ReservationForm() {
+-  return <form>Reservation Form</form>;
+-}
+-
+-export default ReservationForm;
++function ReservationForm() {
++  return <form>Reservation Form</form>;
++}
++
++export default ReservationForm;
+diff --git a/frontend/src/components/ReservationModal.jsx b/frontend/src/components/ReservationModal.jsx
+index 6860ab2..8a505fa 100644
+--- a/frontend/src/components/ReservationModal.jsx
++++ b/frontend/src/components/ReservationModal.jsx
+@@ -1,5 +1,5 @@
+-function ReservationModal() {
+-  return <section>Reservation Modal</section>;
+-}
+-
+-export default ReservationModal;
++function ReservationModal() {
++  return <section>Reservation Modal</section>;
++}
++
++export default ReservationModal;
+diff --git a/frontend/src/pages/AdminPage.jsx b/frontend/src/pages/AdminPage.jsx
+index e10155b..6bcfd44 100644
+--- a/frontend/src/pages/AdminPage.jsx
++++ b/frontend/src/pages/AdminPage.jsx
+@@ -1,5 +1,5 @@
+-function AdminPage() {
+-  return <main>Admin Dashboard</main>;
+-}
+-
+-export default AdminPage;
++function AdminPage() {
++  return <main>Admin Dashboard</main>;
++}
++
++export default AdminPage;
+diff --git a/frontend/src/pages/CalendarPage.jsx b/frontend/src/pages/CalendarPage.jsx
+index 7032ed4..ed0830d 100644
+--- a/frontend/src/pages/CalendarPage.jsx
++++ b/frontend/src/pages/CalendarPage.jsx
+@@ -1,5 +1,5 @@
+-function CalendarPage() {
+-  return <main>Reservation Calendar</main>;
+-}
+-
+-export default CalendarPage;
++function CalendarPage() {
++  return <main>Reservation Calendar</main>;
++}
++
++export default CalendarPage;
+diff --git a/frontend/src/pages/DashboardPage.jsx b/frontend/src/pages/DashboardPage.jsx
+index bca393a..8e60985 100644
+--- a/frontend/src/pages/DashboardPage.jsx
++++ b/frontend/src/pages/DashboardPage.jsx
+@@ -1,5 +1,5 @@
+-function DashboardPage() {
+-  return <main>MKS Area Dashboard</main>;
+-}
+-
+-export default DashboardPage;
++function DashboardPage() {
++  return <main>MKS Area Dashboard</main>;
++}
++
++export default DashboardPage;
+diff --git a/frontend/src/pages/LoginPage.jsx b/frontend/src/pages/LoginPage.jsx
+index d8a9210..0772df9 100644
+--- a/frontend/src/pages/LoginPage.jsx
++++ b/frontend/src/pages/LoginPage.jsx
+@@ -1,5 +1,5 @@
+-function LoginPage() {
+-  return <main>Login Page</main>;
+-}
+-
+-export default LoginPage;
++function LoginPage() {
++  return <main>Login Page</main>;
++}
++
++export default LoginPage;
+diff --git a/frontend/src/pages/MyReservationsPage.jsx b/frontend/src/pages/MyReservationsPage.jsx
+index 1ddde30..a7ae135 100644
+--- a/frontend/src/pages/MyReservationsPage.jsx
++++ b/frontend/src/pages/MyReservationsPage.jsx
+@@ -1,5 +1,5 @@
+-function MyReservationsPage() {
+-  return <main>My Reservations</main>;
+-}
+-
+-export default MyReservationsPage;
++function MyReservationsPage() {
++  return <main>My Reservations</main>;
++}
++
++export default MyReservationsPage;
+diff --git a/frontend/src/pages/RegisterPage.jsx b/frontend/src/pages/RegisterPage.jsx
+index f669f02..a96098c 100644
+--- a/frontend/src/pages/RegisterPage.jsx
++++ b/frontend/src/pages/RegisterPage.jsx
+@@ -1,5 +1,5 @@
+-function RegisterPage() {
+-  return <main>Register Page</main>;
+-}
+-
+-export default RegisterPage;
++function RegisterPage() {
++  return <main>Register Page</main>;
++}
++
++export default RegisterPage;

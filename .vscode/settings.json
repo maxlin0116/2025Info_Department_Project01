@@ -1,0 +1,10 @@
+{
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  "git.enabled": true,
+  "git.decorations.enabled": true,
+  "git.autoRepositoryDetection": "subFolders",
+  "git.scanRepositories": [
+    "Info-Department-Final-Project"
+  ]
+}
